@@ -12,7 +12,7 @@ class TransactionType extends Model
 
     protected $fillable = [
         'transaction_type_name',
-        'foundation_id'
+        'foundation_name'
     ];
 
     public function inventoryTransactions()

@@ -21,6 +21,7 @@ class InventoryRoom extends Model
     {
         return $this->belongsTo(
             Inventory::class,
+            'inventory_id',
             'inventory_id'
         );
     }

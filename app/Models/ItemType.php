@@ -13,7 +13,7 @@ class ItemType extends Model
     protected $fillable = [
         'item_type_name',
         'description',
-        'foundation_id'
+        'foundation_name'
     ];
 
     public function items()

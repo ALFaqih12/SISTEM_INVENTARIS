@@ -39,9 +39,12 @@ class InventoryRoomResource extends Resource
                 Forms\Components\DatePicker::make('inventory_date')
                     ->required(),
                 Forms\Components\Select::make('inventory_id')
-                    ->relationship(
-                        'inventory',
-                        'inventory_id')
+                    ->label('Barang')
+                    ->relationship('inventory', 'inventory_id')
+                    ->getOptionLabelFromRecordUsing(
+                        fn ($record) =>
+                            "{$record->item->item_name} ({$record->quantity} Unit)"
+                    )
                     ->searchable()
                     ->preload()
                     ->required(),
